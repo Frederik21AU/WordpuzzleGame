@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class WordSearchController : MonoBehaviour
 {
@@ -35,10 +36,14 @@ public class WordSearchController : MonoBehaviour
     LetterCell startCell;
     List<LetterCell> currentSelection = new();
 
+    [Header("Win Screen")]
+    public GameObject winPanel;
+
     void Start()
     {
         BuildGrid();
         BuildWordListUI();
+        winPanel.SetActive(false);
     }
 
     void BuildGrid()
@@ -148,9 +153,15 @@ public class WordSearchController : MonoBehaviour
             if (wordListEntries.TryGetValue(match.word, out var entry))
                 entry.fontStyle = FontStyles.Strikethrough;
 
-            statusText.text = foundWords.Count == placedWords.Count
-                ? "You found them all! 🎉"
-                : $"Found {foundWords.Count}/{placedWords.Count}";
+            if (foundWords.Count == placedWords.Count)
+            {
+                statusText.text = "You found them all! 🎉";
+                winPanel.SetActive(true);
+            }
+            else
+            {
+                statusText.text = $"Found {foundWords.Count}/{placedWords.Count}";
+            }
         }
 
         currentSelection.Clear();
