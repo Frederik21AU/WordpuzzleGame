@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scripts/UI.meta
 guid: a4d4673ad663c427f8b06bfb74ee72da
+========
+guid: c5acb6b4622a24f4995e10cf15615371
+>>>>>>>> Stashed changes:Assets/Sprites.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

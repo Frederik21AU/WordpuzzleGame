@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/sprites/BackgroundSprites.meta
 guid: f8e10b8cd00cc49a793b6d6c4a53e6f1
+========
+guid: a4d4673ad663c427f8b06bfb74ee72da
+>>>>>>>> Stashed changes:Assets/Scripts/UI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
