@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1035, y: 54}
+  m_AnchoredPosition: {x: -1687, y: 54}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775061423
@@ -720,10 +720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b574e456ff56f41ac8d67a06c1ea99f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordSearchController
-  wordListData: {fileID: 11400000, guid: cc2ba2887d8944a549d738a1d7639ef7, type: 2}
+  wordListData: {fileID: 11400000, guid: f44d3d2cfe55b6d44a0819ff05e6520a, type: 2}
   tileDatabase: {fileID: 11400000, guid: 67a85aec0dafc42d79e921e9fd896c94, type: 2}
-  rows: 10
+  rows: 20
   cols: 10
+  gridShape: {fileID: 11400000, guid: 3d693007d9fdd78448c3f5126bdf4084, type: 2}
   cellPrefab: {fileID: 1018449004751138036, guid: 31e389107e65b40d8a55a4cdb7effca1, type: 3}
   grid: {fileID: 1084507505}
   wordListContent: {fileID: 775061422}
@@ -932,8 +933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400}
-  m_SizeDelta: {x: 900, y: 900}
+  m_AnchoredPosition: {x: 0, y: 280}
+  m_SizeDelta: {x: 1030, y: 1820}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084507503
 MonoBehaviour:
@@ -948,7 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -993,7 +994,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 80, y: 80}
+  m_CellSize: {x: 120, y: 120}
   m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1062,15 +1063,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1131,8 +1132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -850}
+  m_SizeDelta: {x: 1215, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1793271063
 GameObject:
