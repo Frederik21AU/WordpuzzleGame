@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: WordList
   m_EditorClassIdentifier: Assembly-CSharp::WordList
   wordPool:
-  - Cat
-  - Dog
-  - Pool
-  - Unity
-  - Happy
-  - Game
-  - Grid
-  - Code
+  - handsker
+  - havesaks
+  - muld
+  - haveslange
+  - Blomst
+  - sol
+  - ukrudt
   wordsPerRound: 8

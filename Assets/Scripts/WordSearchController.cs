@@ -86,7 +86,7 @@ public class WordSearchController : MonoBehaviour
             entry.text = pw.word;
             wordListEntries[pw.word] = entry;
         }
-        statusText.text = $"Find {placedWords.Count} words";
+        statusText.text = $"Find de {placedWords.Count} Ord på boardet!";
     }
 
     void Update()
@@ -149,7 +149,7 @@ public class WordSearchController : MonoBehaviour
                 entry.fontStyle = FontStyles.Strikethrough;
 
             statusText.text = foundWords.Count == placedWords.Count
-                ? "You found them all! 🎉"
+                ? "Du fandt alle ordene! Tillykke!"
                 : $"Found {foundWords.Count}/{placedWords.Count}";
         }
 
