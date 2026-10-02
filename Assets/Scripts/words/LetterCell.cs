@@ -11,6 +11,7 @@ public class LetterCell : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
     [NonSerialized] public int row;
     [NonSerialized] public int col;
     [NonSerialized] public char letter;
+    [NonSerialized] public bool isDead;
     [NonSerialized] public Action<LetterCell> OnDown;
     [NonSerialized] public Action<LetterCell> OnEnter;
     [NonSerialized] public Action<LetterCell> OnUp;
@@ -21,6 +22,21 @@ public class LetterCell : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
         col = c;
         letter = letterChar;
         tileImage.sprite = sprite;
+        isDead = false;
+    }
+
+    public void SetupDead(int r, int c)
+    {
+        row = r;
+        col = c;
+        letter = '\0';
+        isDead = true;
+
+        tileImage.enabled = false;
+        highlightOverlay.enabled = false;
+
+        tileImage.raycastTarget = false;
+        highlightOverlay.raycastTarget = false;
     }
 
     public void OnPointerDown(PointerEventData eventData) => OnDown?.Invoke(this);

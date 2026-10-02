@@ -23,9 +23,22 @@ public static class WordSearchGen
         new Vector2Int(-1, 1),
     };
 
-    public static char[,] Generate(int rows, int cols, string[] words, out List<PlacedWord> placed, int maxAttemptsPerWord = 300)
+    public static char[,] Generate(int rows, int cols, string[] words, GridShape gridShape, out List<PlacedWord> placed, int maxAttemptsPerWord = 300)
     {
         var grid = new char[rows, cols];
+        if (gridShape != null)
+        {
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c =0; c < cols; c++)
+                {
+                    if (!gridShape.IsActive(r, c))
+                    {
+                        grid[r, c] = '#';                   // # = dead/empty cell
+                    }
+                }
+            }
+        }
         placed = new List<PlacedWord>();
         var rng = new System.Random();
 
@@ -53,6 +66,11 @@ public static class WordSearchGen
                     int r = startRow + dir.x * i;
                     int c = startCol + dir.y * i;
                     char existing = grid[r, c];
+                    if (existing == '#')
+                    {
+                        fits = false;
+                        break;
+                    }
                     if (existing != '\0' && existing != word[i]) { fits = false; break; }
                 }
                 if (!fits) continue;

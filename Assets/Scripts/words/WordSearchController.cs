@@ -14,6 +14,7 @@ public class WordSearchController : MonoBehaviour
     public LetterTileDatabase tileDatabase;
     public int rows = 10;
     public int cols = 10;
+    public GridShape gridShape;
 
     [Header("References")]
     public LetterCell cellPrefab;
@@ -52,7 +53,7 @@ public class WordSearchController : MonoBehaviour
     void BuildGrid()
     {
         string[] roundWords = PickRandomWords(wordListData.wordPool, wordListData.wordsPerRound);
-        char[,] letters = WordSearchGen.Generate(rows, cols, roundWords, out placedWords);
+        char[,] letters = WordSearchGen.Generate(rows, cols, roundWords, gridShape, out placedWords);
 
         grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
         grid.constraintCount = cols;
@@ -64,12 +65,20 @@ public class WordSearchController : MonoBehaviour
             {
                 var cell = Instantiate(cellPrefab, grid.transform);
                 cell.name = $"Cell_{r}_{c}";
-                cell.Setup(r, c, letters[r, c], tileDatabase.GetSprite(letters[r, c]));
-                cell.SetHighlight(normalColor);
-                cell.OnDown = BeginSelection;
-                cell.OnEnter = ExtendSelection;
-                cell.OnUp = HandlePointerUp;
-                cells[r, c] = cell;
+                if (letters[r, c] == '#')
+                {
+                    cell.SetupDead(r, c);
+                }
+                else
+                {
+                    cell.Setup(r, c, letters[r, c], tileDatabase.GetSprite(letters[r, c]));
+                    cell.SetHighlight(normalColor);
+
+                    cell.OnDown = BeginSelection;
+                    cell.OnEnter = ExtendSelection;
+                    cell.OnUp = HandlePointerUp;
+                }
+                    cells[r, c] = cell;
             }
         }
     }
@@ -130,7 +139,14 @@ public class WordSearchController : MonoBehaviour
         {
             int r = startCell.row + stepRow * i;
             int c = startCell.col + stepCol * i;
-            path.Add(cells[r, c]);
+            LetterCell pathCell = cells[r, c];
+
+            if (pathCell.isDead)
+            {
+                return;
+            }
+
+            path.Add(pathCell);
         }
 
         currentSelection = path;

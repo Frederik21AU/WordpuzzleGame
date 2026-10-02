@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: LetterTiles_Metal
   m_EditorClassIdentifier: Assembly-CSharp::LetterTileDatabase
   letters:
-  - letter: 48
-    sprite: {fileID: 5668723071718756358, guid: f7a8cbf76b5784fa8942099335a68982, type: 3}
   - letter: 65
     sprite: {fileID: 8325448539680039161, guid: 8fd31ad989dd341a68e3f6504a591848, type: 3}
   - letter: 66
@@ -69,3 +67,4 @@ MonoBehaviour:
     sprite: {fileID: -3558846095894657917, guid: b2585bce50a004316b49d6fb69fa844c, type: 3}
   - letter: 90
     sprite: {fileID: -5601975564746493214, guid: adf8848f05b5a41ea9b95c9d58b57f47, type: 3}
+

@@ -472,8 +472,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
   m_AnchoredPosition: {x: -1131.3092, y: 54}
   m_SizeDelta: {x: -192.6184, y: 0}
+========
+  m_AnchoredPosition: {x: -2267, y: 54}
+  m_SizeDelta: {x: 0, y: 0}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775061423
 MonoBehaviour:
@@ -662,6 +667,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b574e456ff56f41ac8d67a06c1ea99f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordSearchController
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
+========
+  wordListData: {fileID: 11400000, guid: cc2ba2887d8944a549d738a1d7639ef7, type: 2}
+  tileDatabase: {fileID: 11400000, guid: 67a85aec0dafc42d79e921e9fd896c94, type: 2}
+  rows: 15
+  cols: 10
+  gridShape: {fileID: 0}
+  cellPrefab: {fileID: 1018449004751138036, guid: 31e389107e65b40d8a55a4cdb7effca1, type: 3}
+  grid: {fileID: 1084507505}
+  wordListContent: {fileID: 775061422}
+  wordListEntryPrefab: {fileID: 7857008887391021897, guid: 3c500dbd49fa14a6087165dc1f7e11ed, type: 3}
+  statusText: {fileID: 1763369900}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  selectingColor: {r: 1, g: 0.85, b: 0.3, a: 0.55}
+  foundColor: {r: 0.4, g: 0.9, b: 0.4, a: 0.55}
+  winPanel: {fileID: 1814451357}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
 --- !u!4 &1010898214
 Transform:
   m_ObjectHideFlags: 0
@@ -737,8 +759,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
   m_AnchoredPosition: {x: -92.482, y: 647}
   m_SizeDelta: {x: 801.9404, y: 769.2538}
+========
+  m_AnchoredPosition: {x: 0, y: 260}
+  m_SizeDelta: {x: 1225, y: 1820}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084507503
 MonoBehaviour:
@@ -753,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -802,6 +829,7 @@ MonoBehaviour:
   m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
 --- !u!1 &1188872193
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +879,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+========
+--- !u!1001 &1656592201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 607.8818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1372.8999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5945372804629907851, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441741851840078300, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: m_Name
+      value: SceneAudio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
 --- !u!1 &1763369899
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,15 +1003,20 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
   m_fontSize: 160
   m_fontSizeBase: 160
+========
+  m_fontSize: 120
+  m_fontSizeBase: 120
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -985,8 +1077,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
   m_AnchoredPosition: {x: 17, y: -56.85}
   m_SizeDelta: {x: 694.3456, y: 113.6992}
+========
+  m_AnchoredPosition: {x: 0, y: -850}
+  m_SizeDelta: {x: 1215, y: 400}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1793271063
 GameObject:
@@ -1103,4 +1200,8 @@ SceneRoots:
   - {fileID: 1793271067}
   - {fileID: 811974969}
   - {fileID: 1010898214}
+<<<<<<<< HEAD:Assets/Scenes/MainGame.unity
   - {fileID: 1188872195}
+========
+  - {fileID: 1656592201}
+>>>>>>>> origin/Lisas-Branch:Assets/Scenes/Level_1_Garden.unity
