@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -38,6 +39,8 @@ public class WordSearchController : MonoBehaviour
 
     [Header("Win Screen")]
     public GameObject winPanel;
+
+    public Action OnWordFound;
 
     void Start()
     {
@@ -159,7 +162,7 @@ public class WordSearchController : MonoBehaviour
                 : $"Found {foundWords.Count}/{placedWords.Count}";
             if (foundWords.Count == placedWords.Count)
             {
-                statusText.text = "You found them all! 🎉";
+                statusText.text = "You found them all!";
                 winPanel.SetActive(true);
             }
             else
