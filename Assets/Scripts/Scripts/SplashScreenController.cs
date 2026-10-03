@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class SplashScreenController : MonoBehaviour
 {
@@ -66,6 +68,27 @@ public class SplashScreenController : MonoBehaviour
                 SceneManager.GetSceneByName(nextSceneName);
 
             SceneManager.SetActiveScene(nextScene);
+
+            // Disable the splash scene's own AudioListener and EventSystem
+            // now that the next scene has taken over, so we never have
+            // two of either active at the same time.
+            AudioListener splashListener = splashScene.GetRootGameObjects()
+                .SelectMany(go => go.GetComponentsInChildren<AudioListener>())
+                .FirstOrDefault();
+
+            if (splashListener != null)
+            {
+                splashListener.enabled = false;
+            }
+
+            EventSystem splashEventSystem = splashScene.GetRootGameObjects()
+                .SelectMany(go => go.GetComponentsInChildren<EventSystem>())
+                .FirstOrDefault();
+
+            if (splashEventSystem != null)
+            {
+                splashEventSystem.enabled = false;
+            }
 
             // Fade the black splash screen away,
             // revealing the new scene underneath.

@@ -29,6 +29,7 @@ public class SceneAudio : MonoBehaviour
 
     public void PlayButtonClick()
     {
+        Debug.Log("PlayButtonCLick called");
         if (buttonClickSound != null)
         {
             soundEffectSource.PlayOneShot(buttonClickSound, soundEffectVolume);

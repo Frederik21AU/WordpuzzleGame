@@ -41,7 +41,11 @@ public class WordSearchController : MonoBehaviour
     [Header("Win Screen")]
     public GameObject winPanel;
 
+    public SceneAudio sceneAudio;
+
     public Action OnWordFound;
+
+    public Action OnPuzzleSolved;
 
     void Start()
     {
@@ -180,13 +184,22 @@ public class WordSearchController : MonoBehaviour
             {
                 statusText.text = "You found them all!";
                 winPanel.SetActive(true);
+                OnPuzzleSolved?.Invoke();
+            }
+            if (foundWords.Count == placedWords.Count)
+            {
+                statusText.text = "You found them all";
+                winPanel.SetActive(true);
+                //Sætter den til sidst i canvas (ingen link problemer)
+                winPanel.transform.SetAsLastSibling();
+                sceneAudio.PlayButtonClick();
+                OnPuzzleSolved?.Invoke();
             }
             else
             {
                 statusText.text = $"Found {foundWords.Count}/{placedWords.Count}";
             }
         }
-
         currentSelection.Clear();
         RefreshColors();
     }
