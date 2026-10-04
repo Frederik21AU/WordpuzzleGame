@@ -14,7 +14,7 @@ public class PopUpManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("[PopUpManager] HandlePuzzleSolved received!");
+        Debug.Log("PopUpManager started. waitTime = " + waitTime);
         controller.OnWordFound += ResetTimer;
         controller.OnPuzzleSolved += HandlePuzzleSolved;
     }
@@ -27,8 +27,15 @@ public class PopUpManager : MonoBehaviour
 
         if (timer >= waitTime && ActivePopUp == null)
         {
+            Debug.Log("Spawning popup");
             timer = 0f;
             ActivePopUp = Instantiate(popUp_prefab, popupParent);
+            PopUp popUP = ActivePopUp.GetComponentInChildren<PopUp>();
+            
+            if (popUP != null)
+            {
+                popUP.SetHint(controller.wordListData.LevelHint);
+            }
         }
     }
     

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OverworldNavigator : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class OverworldNavigator : MonoBehaviour
 
     private void Start()
     {
+        currentLocation = Mathf.Clamp(LocationSelectButton.selectedLocation, 0, Locations.Length - 1);
+        LocationSelectButton.selectedLocation = 0;
         ShowLocation();
     }
 
@@ -26,6 +29,10 @@ public class OverworldNavigator : MonoBehaviour
         {
             currentLocation--;
             ShowLocation();
+        }
+        else
+        {
+            SceneManager.LoadScene("Mainmenu");
         }
     }
 

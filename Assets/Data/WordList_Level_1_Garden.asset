@@ -14,4 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WordList
   wordPool:
   - handsker
+  - havesaks
+  - blomst
+  - haveslange
+  - "H\xE6kkesaks"
+  - Blomstersaks
+  - Havehakke
+  - Kost
+  - spade
+  - "S\xE6kkevogn"
+  - Rive
+  - Blomsterkniv
+  - "kn\xE6pude"
+  - "H\xE6kkeklipper"
+  - "pl\xE6nelufter"
   wordsPerRound: 8
+  LevelHint: Husk du skal finde haveredskaber!

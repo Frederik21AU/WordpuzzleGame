@@ -1,9 +1,9 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class PopUp : MonoBehaviour
+public class CatDialogue : MonoBehaviour
 {
     [Header("Cat")]
     [SerializeField] private Image catImage;
@@ -14,29 +14,21 @@ public class PopUp : MonoBehaviour
     [Header("Bubble")]
     [SerializeField] private GameObject bubble;
     [SerializeField] private TMP_Text bubbleText;
+    [TextArea] [SerializeField] private string message;
     [SerializeField] private float charsPerSecond = 30f;
     [SerializeField] private float popInTime = 0.25f;
-    [SerializeField] private float stayAfterSpeaking = 6f;
 
-    private string hint = "";
-    private bool clicked;
+    private Coroutine speakRoutine;
 
-    void Start()
+    void OnEnable()
     {
-        bubble.SetActive(false);
+        Speak(message);
     }
 
-    public void SetHint(string text)
+    public void Speak(string text)
     {
-        hint = text;
-    }
-
-    // Hook this to the cat Button's OnClick
-    public void OnClicked()
-    {
-        if (clicked) return;
-        clicked = true;
-        StartCoroutine(SpeakRoutine(hint));
+        if (speakRoutine != null) StopCoroutine(speakRoutine);
+        speakRoutine = StartCoroutine(SpeakRoutine(text));
     }
 
     private IEnumerator SpeakRoutine(string text)
@@ -57,15 +49,18 @@ public class PopUp : MonoBehaviour
         {
             elapsed += Time.deltaTime;
 
+            // Bubble grows in (smooth start and end)
             float p = Mathf.Clamp01(elapsed / popInTime);
             bubble.transform.localScale = Vector3.one * (p * p * (3f - 2f * p));
 
+            // Text starts typing once the bubble has appeared
             if (elapsed >= popInTime)
             {
                 shown += charsPerSecond * Time.deltaTime;
                 bubbleText.maxVisibleCharacters = Mathf.Min((int)shown, total);
             }
 
+            // Mouth flaps from the very start
             mouthTimer += Time.deltaTime;
             if (mouthTimer >= mouthSwitchTime)
             {
@@ -79,8 +74,5 @@ public class PopUp : MonoBehaviour
 
         bubble.transform.localScale = Vector3.one;
         catImage.sprite = mouthClosedSprite;
-
-        yield return new WaitForSeconds(stayAfterSpeaking);
-        Destroy(gameObject);
     }
 }
