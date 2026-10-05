@@ -244,5 +244,5 @@ MonoBehaviour:
   soundEffectSource: {fileID: 8700609332142292763}
   music: {fileID: 0}
   musicVolume: 0.5
-  buttonClickSound: {fileID: 0}
+  buttonClickSound: {fileID: 8300000, guid: 6d8aa6cf8a91db9488f40fad0236cc50, type: 3}
   soundEffectVolume: 1
