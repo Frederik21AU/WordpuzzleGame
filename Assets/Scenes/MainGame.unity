@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -657,6 +658,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07d9877afc2f4349b9bdd5ad860da0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AspectRatioLock
+  targetWidth: 1170
+  targetHeight: 2532
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,8 +925,9 @@ GameObject:
   - component: {fileID: 775061422}
   - component: {fileID: 775061426}
   - component: {fileID: 775061425}
-  - component: {fileID: 775061424}
   - component: {fileID: 775061423}
+  - component: {fileID: 775061427}
+  - component: {fileID: 775061428}
   m_Layer: 5
   m_Name: WordListPanel
   m_TagString: Untagged
@@ -933,10 +949,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1793271067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1131.3092, y: 54}
-  m_SizeDelta: {x: -192.6184, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17, y: -702}
+  m_SizeDelta: {x: 977.3816, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775061423
 MonoBehaviour:
@@ -952,32 +968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &775061424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775061421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 4
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &775061425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,15 +981,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -7233094390423415705, guid: 7f24fe7d1efce4409b00b163b2f62092, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1016,6 +1006,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775061421}
   m_CullTransparentMesh: 1
+--- !u!114 &775061427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775061421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebab0c6a44e2a449abd4f20a634518e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelWatcher
+--- !u!114 &775061428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775061421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 260, y: 120}
+  m_Spacing: {x: 20, y: 14}
+  m_Constraint: 1
+  m_ConstraintCount: 3
 --- !u!1 &811974966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1130,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 425394883432806679, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 8300000, guid: c9132901b6e13d14382203ec0a7626c6, type: 3}
+    - target: {fileID: 425394883432806679, guid: 2e84e5a176810f941b577e9c4b14c843, type: 3}
       propertyPath: buttonClickSound
       value: 
       objectReference: {fileID: 8300000, guid: 6d8aa6cf8a91db9488f40fad0236cc50, type: 3}
@@ -1178,6 +1208,7 @@ GameObject:
   - component: {fileID: 1010898214}
   - component: {fileID: 1010898215}
   - component: {fileID: 1010898216}
+  - component: {fileID: 1010898217}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1239,6 +1270,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b40bd4ced70ea47bd954e80ef904d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameUtility
+--- !u!114 &1010898217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010898212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ac3f0e1418d084dac6dadfd173dee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WordListVisibility
+  wordListPanel: {fileID: 775061421}
 --- !u!1 &1042620309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1875,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1170, y: 2532}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

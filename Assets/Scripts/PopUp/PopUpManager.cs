@@ -14,9 +14,10 @@ public class PopUpManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Hints enabled:" + hintsEnabled + ", delay: " + waitTime);
         hintsEnabled = HintSettings.Enabled;
         waitTime = HintSettings.Delay;
+
+        Debug.Log("PopUpManager started: hints " + hintsEnabled + ", delay " + waitTime);
 
         controller.OnWordFound += ResetTimer;
         controller.OnPuzzleSolved += HandlePuzzleSolved;
@@ -24,12 +25,29 @@ public class PopUpManager : MonoBehaviour
 
     void Update()
     {
-        if (!hintsEnabled || puzzleSolved) return;
+        if (!hintsEnabled)
+        {
+            if (Time.frameCount % 120 == 0) Debug.Log("PopUpManager: hints are off");
+            return;
+        }
+
+        if (puzzleSolved)
+        {
+            if (Time.frameCount % 120 == 0) Debug.Log("PopUpManager: puzzle already solved");
+            return;
+        }
 
         timer += Time.deltaTime;
 
+        if (Time.frameCount % 120 == 0)
+        {
+            Debug.Log("timer " + timer + " / " + waitTime + ", popup: " + activePopUp);
+        }
+
         if (timer >= waitTime && activePopUp == null)
         {
+            Debug.Log("Spawning popup");
+
             timer = 0f;
             activePopUp = Instantiate(popUp_prefab, popupParent);
 

@@ -4,6 +4,7 @@ public static class HintSettings
 {
     private const string EnabledKey = "hintsEnabled";
     private const string DelayKey = "hintDelay";
+    private const string WordListKey = "showWordList";
 
     public const float DefaultDelay = 10f;
 
@@ -26,4 +27,14 @@ public static class HintSettings
             PlayerPrefs.Save();
         }
     }
+
+    public static bool showWordList
+{
+    get { return PlayerPrefs.GetInt(WordListKey, 0) == 1; }
+    set
+    {
+        PlayerPrefs.SetInt(WordListKey, value ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+}
 }

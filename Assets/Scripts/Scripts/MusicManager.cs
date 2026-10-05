@@ -5,6 +5,7 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource musicSource;
 
+    [SerializeField] private string[] musicScenes = {"Splashscreen", "Mainmenu", "Overworld"};
     private static MusicManager instance;
 
     void Awake()
@@ -39,13 +40,17 @@ public class MusicManager : MonoBehaviour
     {
         if (musicSource == null) return;
 
-        if (scene.name != "Mainmenu" && scene.name != "Splashscreen")
+        if (System.Array.IndexOf(musicScenes, scene.name) >= 0)
         {
-            musicSource.Stop();
+            if (!musicSource.isPlaying)
+            {
+                musicSource.UnPause();
+                if (!musicSource.isPlaying) musicSource.Play();
+            }
         }
-        if (scene.name == "Mainmenu" && !musicSource.isPlaying)
+        else
         {
-            musicSource.Play();
+            musicSource.Pause();
         }
     }
 }
