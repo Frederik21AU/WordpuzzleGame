@@ -4,16 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class LocationSelectButton : MonoBehaviour
 {
-    public static int selectedLocation = 0;
+    public static int SelectedLocation = -1;
 
-    [SerializeField] private int LocationIndex;
+    [SerializeField] private int locationIndex;
     [SerializeField] private string overworldSceneName = "Overworld";
     [SerializeField] private float loadDelay = 0.2f;
 
     public void Click()
     {
-        selectedLocation = LocationIndex;
-        SceneManager.LoadScene(overworldSceneName);
+        SelectedLocation = locationIndex;
+        StartCoroutine(LoadAfterDelay());
     }
 
     private IEnumerator LoadAfterDelay()
@@ -21,5 +21,4 @@ public class LocationSelectButton : MonoBehaviour
         yield return new WaitForSeconds(loadDelay);
         SceneManager.LoadScene(overworldSceneName);
     }
-    
 }

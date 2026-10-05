@@ -3,42 +3,44 @@ using UnityEngine;
 public class PopUpManager : MonoBehaviour
 {
     [SerializeField] private WordSearchController controller;
-    [SerializeField] GameObject popUp_prefab;
+    [SerializeField] private GameObject popUp_prefab;
     [SerializeField] private Transform popupParent;
-    [SerializeField] private float waitTime = 5f;
 
-    private GameObject ActivePopUp;
-    private float timer =0f;
+    private GameObject activePopUp;
+    private float timer = 0f;
+    private bool hintsEnabled;
+    private float waitTime;
     private bool puzzleSolved = false;
-
 
     void Start()
     {
-        Debug.Log("PopUpManager started. waitTime = " + waitTime);
+        Debug.Log("Hints enabled:" + hintsEnabled + ", delay: " + waitTime);
+        hintsEnabled = HintSettings.Enabled;
+        waitTime = HintSettings.Delay;
+
         controller.OnWordFound += ResetTimer;
         controller.OnPuzzleSolved += HandlePuzzleSolved;
     }
 
-   void Update()
+    void Update()
     {
-        if (puzzleSolved) return;
+        if (!hintsEnabled || puzzleSolved) return;
 
         timer += Time.deltaTime;
 
-        if (timer >= waitTime && ActivePopUp == null)
+        if (timer >= waitTime && activePopUp == null)
         {
-            Debug.Log("Spawning popup");
             timer = 0f;
-            ActivePopUp = Instantiate(popUp_prefab, popupParent);
-            PopUp popUP = ActivePopUp.GetComponentInChildren<PopUp>();
-            
-            if (popUP != null)
+            activePopUp = Instantiate(popUp_prefab, popupParent);
+
+            PopUp popUp = activePopUp.GetComponentInChildren<PopUp>();
+            if (popUp != null)
             {
-                popUP.SetHint(controller.wordListData.LevelHint);
+                popUp.SetHint(controller.wordListData.LevelHint);
             }
         }
     }
-    
+
     void HandlePuzzleSolved()
     {
         puzzleSolved = true;
@@ -47,28 +49,14 @@ public class PopUpManager : MonoBehaviour
 
     void DespawnPopUp()
     {
-        if (ActivePopUp != null)
+        if (activePopUp != null)
         {
-            Destroy(ActivePopUp);
+            Destroy(activePopUp);
         }
     }
+
     void ResetTimer()
     {
         timer = 0f;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

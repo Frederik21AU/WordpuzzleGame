@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundIcon
   iconImage: {fileID: 609312526}
-  soundOnSprite: {fileID: -7973762990033109058, guid: 91975faaaf884974d9e3659756ec5ae7, type: 3}
+  soundOnSprite: {fileID: -2166421487874832923, guid: 2ee68eeab940a4623abef9fb2ee77eb4, type: 3}
   soundOffSprite: {fileID: -1683933264161322944, guid: c533e5e476d479a46aa4e9e0f4328a8f, type: 3}
 --- !u!114 &609312525
 MonoBehaviour:
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7973762990033109058, guid: 91975faaaf884974d9e3659756ec5ae7, type: 3}
+  m_Sprite: {fileID: -2166421487874832923, guid: 2ee68eeab940a4623abef9fb2ee77eb4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9ef3a530efab44b85636f43698e0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocationSelectButton
-  LocationIndex: 2
+  locationIndex: 0
   overworldSceneName: Overworld
   loadDelay: 0.2
 --- !u!114 &1005737420
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7378957726421084687, guid: 2317ecee9395a498280330d0b910c17b, type: 3}
+  m_Sprite: {fileID: -2238720764885026898, guid: c1af9f7688ddd4b0b8c3a49eeae66fdd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1377,7 +1377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -135.1}
+  m_AnchoredPosition: {x: 50, y: -260}
   m_SizeDelta: {x: 1170, y: 2558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084507503
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1814133409814822454, guid: a9a04e0b7b3fe9946a759338763707bd, type: 3}
+  m_Sprite: {fileID: 5704935121407989706, guid: 87627231784844fe58884f243ac55a13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

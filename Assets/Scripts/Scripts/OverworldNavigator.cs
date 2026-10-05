@@ -5,12 +5,21 @@ public class OverworldNavigator : MonoBehaviour
 {
     public GameObject[] Locations;
 
+    [SerializeField] private string menuSceneName = "Mainmenu";
+
+    public static int LastLocation = 0;
+
     private int currentLocation = 0;
 
     private void Start()
     {
-        currentLocation = Mathf.Clamp(LocationSelectButton.selectedLocation, 0, Locations.Length - 1);
-        LocationSelectButton.selectedLocation = 0;
+        int chosen = LocationSelectButton.SelectedLocation;
+
+        currentLocation = chosen >= 0 ? chosen : LastLocation;
+        currentLocation = Mathf.Clamp(currentLocation, 0, Locations.Length - 1);
+
+        LocationSelectButton.SelectedLocation = -1;
+
         ShowLocation();
     }
 
@@ -32,7 +41,8 @@ public class OverworldNavigator : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Mainmenu");
+            LastLocation = 0; 
+            SceneManager.LoadScene(menuSceneName);
         }
     }
 
@@ -42,5 +52,7 @@ public class OverworldNavigator : MonoBehaviour
         {
             Locations[i].SetActive(i == currentLocation);
         }
+
+        LastLocation = currentLocation;
     }
 }
