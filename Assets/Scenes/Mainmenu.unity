@@ -1651,7 +1651,6 @@ GameObject:
   - component: {fileID: 651128545}
   - component: {fileID: 651128549}
   - component: {fileID: 651128548}
-  - component: {fileID: 651128550}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1789,20 +1788,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &651128550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651128544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07d9877afc2f4349b9bdd5ad860da0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AspectRatioLock
-  targetWidth: 1170
-  targetHeight: 2532
 --- !u!1 &707362045
 GameObject:
   m_ObjectHideFlags: 0
