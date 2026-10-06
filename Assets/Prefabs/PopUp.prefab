@@ -346,7 +346,7 @@ MonoBehaviour:
   bubbleText: {fileID: 5631218161455903661}
   charsPerSecond: 30
   popInTime: 1
-  stayAfterSpeaking: 6
+  stayAfterSpeaking: 4
 --- !u!1 &3682386856892545144
 GameObject:
   m_ObjectHideFlags: 0

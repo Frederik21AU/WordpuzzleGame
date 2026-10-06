@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WordSearchController
   wordListData: {fileID: 11400000, guid: f44d3d2cfe55b6d44a0819ff05e6520a, type: 2}
   tileDatabase: {fileID: 11400000, guid: 67a85aec0dafc42d79e921e9fd896c94, type: 2}
-  rows: 10
+  rows: 20
   cols: 10
   gridShape: {fileID: 11400000, guid: 3d693007d9fdd78448c3f5126bdf4084, type: 2}
   cellPrefab: {fileID: 1018449004751138036, guid: 31e389107e65b40d8a55a4cdb7effca1, type: 3}
@@ -1501,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 54}
+  m_AnchoredPosition: {x: 18, y: 54}
   m_SizeDelta: {x: 1030, y: 1820}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084507503
@@ -1562,10 +1562,10 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 120, y: 120}
-  m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_CellSize: {x: 120, y: 90}
+  m_Spacing: {x: 2, y: 2}
+  m_Constraint: 1
+  m_ConstraintCount: 10
 --- !u!1 &1283514874
 GameObject:
   m_ObjectHideFlags: 0
